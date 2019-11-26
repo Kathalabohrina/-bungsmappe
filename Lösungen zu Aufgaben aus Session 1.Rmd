@@ -1,0 +1,43 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+
+# Sichern des im Base Package enthaltenen Datensatzes 'airquality' im lokalen Speicher
+airQuality <- airquality
+
+# Berechnung des Mittelwerts der Temperatur
+mean(airQuality$Temp)
+
+```
+
+
+```{r}
+
+# Begrenzung (Filtern) des Datensatzen auf die Werte des Monats Juli 
+july <- airQuality[airQuality$Month==7,]
+# Berechnung des Mittelwerts der Temperatur für den Monat Juli
+mean(july$Temp)
+
+```
+
+
+```{r}
+
+# Begrenzung (Filtern) des Datensatzen auf die Werte des Monats Mai
+may <- airQuality[airQuality$Month==5,]
+# Berechnung des Mittelwerts der Temperatur für den Monat Mai
+mean(may$Temp)
+
+```
+
+```{r}
+
+# Berechnung des Mittelwerts der Temperatur für den Monat Mai
+t.test(july$Temp, may$Temp)
+
+```
+
